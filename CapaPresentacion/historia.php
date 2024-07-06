@@ -84,7 +84,7 @@ include_once("../plantilla.html");
                     <td style="display:none;" class="align-middle"><?php print_r($resultado[$i]['id']) ?></td>
                     <td class="align-middle"><?php print_r($resultado[$i]['nombre']) ?></td>
                     <td class="align-middle"><?php print_r($resultado[$i]['apellido']) ?></td>
-                    <td><button onclick='verHistoriaClinica(<?php print_r($resultado[$i]['id']) ?>)'>Ver Historia Clínica</button></td>
+                    <td><button class="btn btn-secondary" onclick='verHistoriaClinica(<?php print_r($resultado[$i]['id']) ?>)'>Ver Historia Clínica</button></td>
                 </tr>
                 <?php
             }

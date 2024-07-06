@@ -77,7 +77,10 @@ include_once("../plantilla.html");
                   <select class="form-control form-control-sm" id="idusuario" name="idusuario" required>
                   <option value="0">Seleccionar consulta</option> 
                   <?php
-                  $usuario=$objetoCapaNegocioEvaluacion->getEvaluacion();
+                  $usuario=$objetoCapaNegocioEvaluacion->getEvaluacion($_SESSION['user']);
+                  if($_SESSION['tipo'] == 'D'){
+                    $usuario=$objetoCapaNegocioEvaluacion->getEvaluacionAdmin();
+                  }
                   for ($i = 0 ; $i < count($usuario) ; $i++) {
 
                       ?>
@@ -173,7 +176,10 @@ include_once("../plantilla.html");
             </thead>
             <tbody id="resultado_busqueda_tratamiento">
             <?php
-            $resultado=$objetoCapaNegocio->mostrar();
+            $resultado=$objetoCapaNegocio->mostrar($_SESSION['user']);
+            if($_SESSION['tipo'] == 'D'){
+                $resultado=$objetoCapaNegocio->mostrarAdmin();
+            }
             for ($i = count($resultado)-1; $i >=0 ; $i--) {
 
                 ?>

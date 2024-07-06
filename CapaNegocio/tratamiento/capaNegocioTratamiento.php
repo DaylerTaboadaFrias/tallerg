@@ -60,10 +60,12 @@ class capaNegocioTratamiento{
 	}
 
 
-	public function mostrar(){
-		return $this->objectoCapaDatoTratamiento->mostrar();
+	public function mostrar($idusuario){
+		return $this->objectoCapaDatoTratamiento->mostrar($idusuario);
 	}
-
+  public function mostrarAdmin(){
+		return $this->objectoCapaDatoTratamiento->mostrarAdmin();
+	}
 
 	public function getIdUltimoTratamiento(){
 		return $this->objectoCapaDatoTratamiento->getIdUltimoTratamiento();
@@ -75,10 +77,12 @@ class capaNegocioTratamiento{
 	public function getIdTratamiento(){
 		return $this->objectoCapaDatoTratamiento->getIdTratamiento();
 	}
-    public function getTratamiento(){
-        return $this->objectoCapaDatoTratamiento->getTratamiento();
+    public function getTratamiento($idusuario){
+        return $this->objectoCapaDatoTratamiento->getTratamiento($idusuario);
     }
-
+    public function getTratamientoAdmin(){
+      return $this->objectoCapaDatoTratamiento->getTratamientoAdmin();
+  }
 
 }
 

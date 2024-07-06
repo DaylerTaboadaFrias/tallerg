@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) {
   echo $_SESSION['tipo'];
 ?>
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Dr.LET</title>

@@ -15,7 +15,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark " style="background-color: #D0EEF0">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="Public/Imagen/logo_drlet.jpg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+          <img src="https://tallerg-production.up.railway.app/Public/Imagen/logo_drlet.jpg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,16 +35,35 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <?php
                 if (isset($_SESSION['tipo'])){
-             if ($_SESSION['tipo']=="A"){
-            ?>
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/usuario.php">Usuario</a>
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/paciente.php">Paciente</a>
+                  if ($_SESSION['tipo']=="A" or $_SESSION['tipo']=="D"){
+              ?>
+              <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/paciente.php">Paciente</a>
+                
+                    <?php
+                      if (isset($_SESSION['tipo'])){
+                        if ($_SESSION['tipo']=="D"){
+                    ?>
+                    <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/usuario.php">Usuario</a>
+                    <?php 
+                  
+                        }
+                      } 
+                    ?>   
              <?php 
             
-            }} 
+                  }
+                } 
             ?>   
-               
-            <a class="dropdown-item" href="/dr.let/CapaPresentacion/medicamento.php">Medicamento</a>
+            <?php
+              if (isset($_SESSION['tipo'])){
+                if ($_SESSION['tipo']=="B" or $_SESSION['tipo']=="D"){
+            ?>
+              <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/medicamento.php">Medicamento</a>
+            <?php 
+                }
+              } 
+            ?>    
+            
               </div>
             </li>
 
@@ -54,39 +73,64 @@
             ?>
 
             <?php
-             if (isset($_SESSION['tipo'])){
-             if ($_SESSION['tipo']=="A"){
+              if (isset($_SESSION['tipo'])){
+                if ($_SESSION['tipo']=="A"  or $_SESSION['tipo']=="D"){
             ?>
-            <li class="nav-item dropdown mx-5">
-              <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Seguimiento
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/visita.php">Visita</a>
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/agenda.php">Agenda</a>
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/receta.php">Receta</a> 
-              </div>
-            </li>
-           
-            <li class="nav-item dropdown mx-5">
-              <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tratamiento
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/categoria.php">Categoria</a>
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/trabajo.php">Trabajo</a>
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/evaluacion.php">Consulta</a>
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/tratamiento.php">Tratamiento</a>
-                <a class="dropdown-item" href="/dr.let/CapaPresentacion/historia.php">Consultar historia clinica</a>
-              </div>
-            </li>
+              <li class="nav-item dropdown mx-5">
+                <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Seguimiento
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <!-- <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/visita.php">Visita</a>
+                  <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/agenda.php">Agenda</a> -->
+                      <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/estadisticareporte.php">Estadisticas</a>
+                      <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/historia.php">Consultar historia clinica</a>
+                  <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/receta.php">Receta</a> 
+                </div>
+              </li>
+            <?php 
+                }
+              } 
+            ?> 
+            
+            <?php
+              if (isset($_SESSION['tipo'])){
+              if ($_SESSION['tipo']=="A" or $_SESSION['tipo']=="D"){
+            ?>
+              <li class="nav-item dropdown mx-5">
+                <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Tratamiento
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <?php
+                    if (isset($_SESSION['tipo'])){
+                      if ($_SESSION['tipo']=="B"  or $_SESSION['tipo']=="D"){
+                  ?>
+                    <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/categoria.php">Categoria</a>
+                    <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/trabajo.php">Trabajo</a>
+                  <?php 
+                      }
+                    } 
+                  ?> 
+                  <?php
+                    if (isset($_SESSION['tipo'])){
+                      if ($_SESSION['tipo']=="A" or $_SESSION['tipo']=="D"  ){
+                  ?>
+                    <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/tratamiento.php">Tratamiento</a>
+                    <a class="dropdown-item" href="https://tallerg-production.up.railway.app/CapaPresentacion/evaluacion.php">Evaluacion dental</a>
+                  <?php 
+                      }
+                    } 
+                  ?> 
+                </div>
+              </li>
             <?php 
             
             }} 
             ?>
 
 
-           
+<!--            
             <li class="nav-item dropdown mx-5">
 
                 <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -96,15 +140,15 @@
                   <a class="dropdown-item" href="/Principal.php">Iniciar</a>
                 </div>
             </li>
-           
+            -->
             <li class="nav-item dropdown mx-5">
 
                 <a class="nav-link dropdown-toggle " style="color: #151515 !important; font-weight: bold;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Cuenta
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/centraldent/login.php">Iniciar Sesion</a>
-                  <a class="dropdown-item" href="/centraldent/logout.php">Salir</a>
+                  <a class="dropdown-item" href="https://tallerg-production.up.railway.app/login.php">Iniciar Sesion</a>
+                  <a class="dropdown-item" href="https://tallerg-production.up.railway.app/logout.php">Salir</a>
                 </div>
             </li>
             

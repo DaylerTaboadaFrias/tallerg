@@ -63,7 +63,27 @@ include_once("conexion.php");
 		}
 
 
-		public function mostrar(){
+		public function mostrar($idusuario){
+			$this->objetoConexion->conectar();
+			$resultado=$this->objetoConexion->ejecutar(
+				"select tratamiento.id,tratamiento.fecha,tratamiento.montototal,tratamiento.descripcion,tratamiento.estado,evaluacion_dental.id as id_evaluacion,persona.nombre, persona.apellido, tratamiento.montopagado,tratamiento.montoacobrar FROM 
+					tratamiento
+				JOIN 
+					evaluacion_dental ON tratamiento.id_evaluacion = evaluacion_dental.id
+				JOIN 
+					paciente ON evaluacion_dental.id_paciente = paciente.id
+				JOIN 
+   			 		persona ON paciente.id = persona.id
+				JOIN 
+					usuario ON evaluacion_dental.id_usuario = usuario.id
+				WHERE usuario.id = '$idusuario'
+				");
+
+			$this->objetoConexion->desconectar();
+			return $resultado;
+		}
+
+		public function mostrarAdmin(){
 			$this->objetoConexion->conectar();
 			$resultado=$this->objetoConexion->ejecutar(
 				"select tratamiento.id,tratamiento.fecha,tratamiento.montototal,tratamiento.descripcion,tratamiento.estado,evaluacion_dental.id as id_evaluacion,persona.nombre, persona.apellido, tratamiento.montopagado,tratamiento.montoacobrar FROM 
@@ -115,10 +135,17 @@ include_once("conexion.php");
 			$this->objetoConexion->desconectar();
 			return $resultado;	
 		}
-		public function getTratamiento(){
+		public function getTratamiento($idusuario){
 			$this->objetoConexion->conectar();
 			$resultado=$this->objetoConexion->ejecutar(
-			"select tratamiento.id,tratamiento.descripcion,persona.nombre as nombre,persona.apellido as apellido from tratamiento,evaluacion_dental,paciente,persona where tratamiento.id_evaluacion=evaluacion_dental.id and evaluacion_dental.id_paciente=paciente.id and paciente.id=persona.id and tratamiento.estado='En proceso'");
+			"select tratamiento.id,tratamiento.descripcion,persona.nombre as nombre,persona.apellido as apellido from usuario,tratamiento,evaluacion_dental,paciente,persona where tratamiento.id_evaluacion=evaluacion_dental.id and evaluacion_dental.id_paciente=paciente.id and paciente.id=persona.id and evaluacion_dental.id_usuario=usuario.id and usuario.id='$idusuario'  and tratamiento.estado='En proceso'");
+			$this->objetoConexion->desconectar();
+			return $resultado;				
+		}
+		public function getTratamientoAdmin(){
+			$this->objetoConexion->conectar();
+			$resultado=$this->objetoConexion->ejecutar(
+			"select tratamiento.id,tratamiento.descripcion,persona.nombre as nombre,persona.apellido as apellido from tratamiento,evaluacion_dental,paciente,persona where tratamiento.id_evaluacion=evaluacion_dental.id and evaluacion_dental.id_paciente=paciente.id and paciente.id=persona.id  and tratamiento.estado='En proceso'");
 			$this->objetoConexion->desconectar();
 			return $resultado;				
 		}

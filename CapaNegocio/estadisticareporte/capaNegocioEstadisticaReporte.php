@@ -15,5 +15,8 @@ class capaNegocioEstadisticaReporte {
             throw $ex;
         }
     }
+    public function getIngresosMensualesPorAno($year) {
+        return $this->objetoTrabajoModel->getIngresosMensualesPorAno($year);
+    }
 }
 ?>

@@ -11,7 +11,7 @@ $objetoCapaNegocioPaciente= new capaNegocioPaciente();
 try{
     if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)){
         if(isset($_POST['insertar'])){
-            $objetoCapaNegocio->insertar($_POST['idcliente'],$_POST['fecha'],$_POST['motivo'],$_POST['diagnostico'],$_POST['antecedentes'],$_POST['tipo_oclusion']);
+            $objetoCapaNegocio->insertar($_SESSION['user'],$_POST['idcliente'],$_POST['fecha'],$_POST['motivo'],$_POST['diagnostico'],$_POST['antecedentes'],$_POST['tipo_oclusion']);
         }
         if(isset($_POST['eliminar'])){
 
@@ -186,7 +186,10 @@ include_once("../plantilla.html");
             </thead>
             <tbody id="resultado_busqueda">
             <?php
-            $resultado=$objetoCapaNegocio->mostrar();
+            $resultado=$objetoCapaNegocio->mostrar($_SESSION['user']);
+            if($_SESSION['tipo'] == 'D'){
+                $resultado=$objetoCapaNegocio->mostrarAdmin();
+            }
             for ($i = count($resultado)-1; $i >=0 ; $i--) {
 
                 ?>

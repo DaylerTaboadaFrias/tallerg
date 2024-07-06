@@ -48,10 +48,13 @@ class capaNegocioReceta{
 	}
 
 
-	public function mostrar(){
-		return $this->objectoCapaDatoReceta->mostrar();
+	public function mostrar($idusuario){
+		return $this->objectoCapaDatoReceta->mostrar($idusuario);
 	}
 
+    public function mostrarAdmin(){
+		return $this->objectoCapaDatoReceta->mostrarAdmin();
+	}
 
 	public function getIdReceta(){
 		return $this->objectoCapaDatoReceta->getIdReceta();

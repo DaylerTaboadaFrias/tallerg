@@ -26,7 +26,18 @@ include_once("conexion.php");
 		}
 
 
-		public function mostrar(){
+		public function mostrar($idusuario){
+			$this->objetoConexion->conectar();
+			$resultado=$this->objetoConexion->ejecutar(
+				"select receta.id,receta.recomendacion,receta.fecha,tratamiento.descripcion as tratamiento, persona.nombre as nombre, persona.apellido from usuario,tratamiento,receta,evaluacion_dental,paciente,persona where receta.idtratamiento=tratamiento.id 
+				and tratamiento.id_evaluacion=evaluacion_dental.id and evaluacion_dental.id_paciente = paciente.id and persona.id = paciente.id and evaluacion_dental.id_usuario = usuario.id and usuario.id = '$idusuario'
+				");
+
+			$this->objetoConexion->desconectar();
+			return $resultado;
+		}
+
+		public function mostrarAdmin(){
 			$this->objetoConexion->conectar();
 			$resultado=$this->objetoConexion->ejecutar(
 				"select receta.id,receta.recomendacion,receta.fecha,tratamiento.descripcion as tratamiento, persona.nombre as nombre, persona.apellido from tratamiento,receta,evaluacion_dental,paciente,persona where receta.idtratamiento=tratamiento.id 

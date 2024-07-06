@@ -91,8 +91,61 @@ include_once("../plantilla.html");
     <?php } ?>
 </div>
 </div>
-<div class="container mb-5 pb-5">
-    
+<!-- Gráfica de Línea de Ingresos Mensuales -->
+<div class="container mt-5">
+    <h2 class="text-center">Ingresos Mensuales Basados en Tratamientos</h2>
+    <form method="GET" class="form-inline mb-4">
+        <div class="form-group mx-sm-3">
+            <label for="year_ingresos" class="mr-2">Año:</label>
+            <input type="number" class="form-control" id="year_ingresos" name="year_ingresos" value="<?php echo date('Y'); ?>" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+
+    <?php
+    // Procesar el formulario y mostrar el gráfico de ingresos
+    if (isset($_GET['year_ingresos'])) {
+        $year_ingresos = intval($_GET['year_ingresos']);
+        $capaNegocioEstadisticaReportea = new capaNegocioEstadisticaReporte();
+        $ingresos = $capaNegocioEstadisticaReportea->getIngresosMensualesPorAno($year_ingresos);
+
+        $ingresos_labels = [];
+        $ingresos_data = [];
+
+        foreach ($ingresos as $mes => $monto_total) {
+            $ingresos_labels[] = $mes;
+            $ingresos_data[] = $monto_total;
+        }
+    ?>
+    <canvas id="myLineChart"></canvas>
+
+    <script>
+        var ingresos_labels = <?php echo json_encode($ingresos_labels); ?>;
+        var ingresos_data = <?php echo json_encode($ingresos_data); ?>;
+
+        var ctx = document.getElementById('myLineChart').getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ingresos_labels,
+                datasets: [{
+                    label: 'Ingresos',
+                    data: ingresos_data,
+                    fill: false,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <?php } ?>
 </div>
 
 

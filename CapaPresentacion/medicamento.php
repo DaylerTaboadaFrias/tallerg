@@ -3,6 +3,9 @@ session_start();
 if (!isset($_SESSION['user'])) {
   header("location: /index.php");
 }
+if (($_SESSION['tipo']) == 'A') {
+    header("location: ../bienvenido.php");
+}
 include_once("../CapaNegocio/medicamento/capaNegocioMedicamento.php");
 $objetoCapaNegocio= new capaNegocioMedicamento();
 try{

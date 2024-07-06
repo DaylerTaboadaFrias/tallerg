@@ -72,7 +72,10 @@ include_once("../plantilla.html");
                   <select class="form-control form-control-sm" id="idtratamiento" name="idtratamiento" required>
                     <option value="0">Seleccionar tratamiento</option> 
                   <?php
-                  $tratamiento=$objetoCapaNegocioTratamiento->getTratamiento();
+                  $tratamiento=$objetoCapaNegocioTratamiento->getTratamiento($_SESSION['user']);
+                  if($_SESSION['tipo'] == 'D'){
+                    $tratamiento=$objetoCapaNegocioTratamiento->getTratamientoAdmin();
+                  }
                   for ($i = 0 ; $i < count($tratamiento) ; $i++) {
 
                       ?>
@@ -158,32 +161,7 @@ include_once("../plantilla.html");
             </tr>
             </thead>
             <tbody id="resultado_busqueda">
-            <?php
-            $resultado=$objetoCapaNegocio->mostrar();
-            for ($i = count($resultado)-1; $i >=0 ; $i--) {
-
-                ?>
-
-                <tr>
-                    <td style="display:none;" class="align-middle"><?php print_r($resultado[$i]['id']) ?></td>
-                    <td class="align-middle"><?php print_r($resultado[$i]['recomendacion']) ?></td>
-                    <td class="align-middle"><?php print_r($resultado[$i]['fecha']) ?></td>
-                    <td class="align-middle"><?php print_r($resultado[$i]['tratamiento']) ?></td>
-                    <td class="align-middle"><?php print_r($resultado[$i]['apellido']." "); print_r($resultado[$i]['nombre']); ?></td>
-                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?php print_r($resultado[$i]['id']) ?>">
-                      Mostrar Detalle
-                    </button>
-                    <form name="form1" id="form1" method="POST" action="../capaNegocio/receta/generarPdfReceta.php">
-                    <input type="text" name="id" hidden value="<?php print_r($resultado[$i]['id']) ?>">
-                     <button type="submit" class="btn btn-info">Imprimir Receta</button>
-                    </form>
-                   
-                    </td>
-                </tr>
-
-                <?php
-            }
-            ?>
+           
             </tbody>
           </table>
     </div>
@@ -303,7 +281,7 @@ $("#tablamedicamentoreceta #"+id).remove();
                     $listanombre=  array();
                     $listatratamiento=  array();
                     $listaidtratamiento=  array();
-                    $resultado=$objetoCapaNegocioTratamiento->getTratamiento();
+                    $resultado=$objetoCapaNegocioTratamiento->getTratamiento($_SESSION['user']);
                     $n= count($resultado);
                     for ($i = 0 ; $i < $n ; $i++) {
                         $listanombre[$i]=$resultado[$i]['nombre'];
@@ -354,7 +332,7 @@ $("#tablamedicamentoreceta #"+id).remove();
                     $listanombre=  array();
                     $listatratamiento=  array();
                     $listaidtratamiento=  array();
-                    $resultado=$objetoCapaNegocioTratamiento->getTratamiento();
+                    $resultado=$objetoCapaNegocioTratamiento->getTratamiento($_SESSION['user']);
                     $n= count($resultado);
                     for ($i = 0 ; $i < $n ; $i++) {
                         $listanombre[$i]=$resultado[$i]['nombre'];
@@ -433,7 +411,7 @@ $("#tablamedicamentoreceta #"+id).remove();
                                           $listanombre=  array();
                                           $listatratamiento=  array();
                                           $listaidtratamiento=  array();
-                                          $resultado=$objetoCapaNegocioTratamiento->getTratamiento();
+                                          $resultado=$objetoCapaNegocioTratamiento->getTratamiento($_SESSION['user']);
                                           $n= count($resultado);
                                           for ($i = 0 ; $i < $n ; $i++) {
                                               $listanombre[$i]=$resultado[$i]['nombre'];
