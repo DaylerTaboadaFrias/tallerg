@@ -1,0 +1,362 @@
+{
+	font-family: "Comic Sans MS", cursive;
+	font-size: 14px;
+	color: #000000;
+}
+body{
+    width: 400px;
+    margin: auto;
+    background-color: #FFF;
+}
+.contacto{
+    border: 1px solid #CED5D7;
+    border-radius: 6px;
+    padding: 45px 45px 20px;
+    margin-top: 0px;
+    background-color: #999;
+    box-shadow: 0px 5px 10px #B5C1C5, 0 0 0 10px #EEF5F7 inset;
+}
+.contacto label{
+    display: block; /* esto es para que el label se sobreponga a la caja de texto */
+    font-weight: bold;
+	color:#000;
+}
+.contacto div{
+    margin-bottom: 15px; /* esto los separara un poco */
+}
+.contacto input[type='text'], .contacto password{
+    padding: 7px 6px;
+    width: 294px; /* una longitud definida */
+    border: 1px solid #CED5D7;
+ 
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
+}
+
+.contacto input[type='text']:focus, .contacto password:focus{
+    outline: none; /* reset especifico para Chrome/Safari */
+    box-shadow:0 0 0 3px #dde9ec;
+}
+.contacto input[type='submit']{
+    border: 1px solid #CED5D7;
+    box-shadow:0 0 0 3px #EEF5F7;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+ 
+    background: #e4f1f6; /* fallback para navegadores que no soporten degradados */
+    background: -moz-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
+    background: -webkit-linear-gradient(top, #e4f1f6 0%,#cfe6ef 100%);
+}
+.contacto input[type='submit']:hover{
+    background: #edfcff;
+    background: -moz-linear-gradient(top, #edfcff 0%, #cfe6ef 100%);
+    background: -webkit-linear-gradient(top, #edfcff 0%,#cfe6ef 100%);
+}
+.contacto input[type='submit']:active{
+    background: #cfe6ef;
+    background: -moz-linear-gradient(top, #cfe6ef 0%, #edfcff 100%);
+    background: -webkit-linear-gradient(top, #cfe6ef 0%,#edfcff 100%);
+}
+
+
+.contacto input[type='reset']{
+    border: 1px solid #CED5D7;
+    box-shadow:0 0 0 3px #EEF5F7;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+ 
+    background: #e4f1f6; /* fallback para navegadores que no soporten degradados */
+    background: -moz-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
+    background: -webkit-linear-gradient(top, #e4f1f6 0%,#cfe6ef 100%);
+}
+.contacto input[type='reset']:hover{
+    background: #edfcff;
+    background: -moz-linear-gradient(top, #edfcff 0%, #cfe6ef 100%);
+    background: -webkit-linear-gradient(top, #edfcff 0%,#cfe6ef 100%);
+}
+.contacto input[type='reset']:active{
+    background: #cfe6ef;
+    background: -moz-linear-gradient(top, #cfe6ef 0%, #edfcff 100%);
+    background: -webkit-linear-gradient(top, #cfe6ef 0%,#edfcff 100%);
+}
+
+
+
+/*-----------------------------------*/
+
+
+.contacto input[type='password'], .contacto password{
+    padding: 7px 6px;
+    width: 294px; /* una longitud definida */
+    border: 1px solid #CED5D7;
+    resize: none; /* esta propiedad es para que el textarea no sea redimensionable */
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
+}
+.contacto input[type='text']:focus, .contacto password:focus{
+    outline: none; /* reset especifico para Chrome/Safari */
+    box-shadow:0 0 0 3px #dde9ec;
+}
+
+.contacto input[name='codigo'], .contacto password{
+    padding: 7px 6px;
+    width: 180px; /* una longitud definida */
+    border: 1px solid #CED5D7;
+ 
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
+}
+.contacto input[name='contraseña'], .contacto password{
+    padding: 7px 6px;
+    width: 150px; /* una longitud definida */
+    border: 1px solid #CED5D7;
+ 
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
+}
+/*----------------------------*/
+.contacto a[type='submit']{
+    border: 1px solid #CED5D7;
+    box-shadow:0 0 0 3px #EEF5F7;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+ 
+    background: #e4f1f6; /* fallback para navegadores que no soporten degradados */
+    background: -moz-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
+    background: -webkit-linear-gradient(top, #e4f1f6 0%,#cfe6ef 100%);
+}
+.contacto a[type='submit']:hover{
+    background: #edfcff;
+    background: -moz-linear-gradient(top, #edfcff 0%, #cfe6ef 100%);
+    background: -webkit-linear-gradient(top, #edfcff 0%,#cfe6ef 100%);
+}
+.contacto  a[type='submit']:active{
+    background: #cfe6ef;
+    background: -moz-linear-gradient(top, #cfe6ef 0%, #edfcff 100%);
+    background: -webkit-linear-gradient(top, #cfe6ef 0%,#edfcff 100%);
+}
+
+/*----------------------------*/
+
+#Cont{
+	position: absolute;
+	left: 127px;
+	top: 305px;
+	width: 1111px;
+	height: 373px;
+	z-index: 1;
+	background-color: #CCC;
+	color: #030;
+	font-size: 16;
+	visibility: inherit;
+	}
+	
+	#Titulo{
+	position: absolute;
+	left: 128px;
+	top: 0px;
+	width: 1111px;
+	height: 196px;
+	z-index: 1;
+	background-color: #CCC;
+	color: #030;
+	font-size: 16;
+	}
+	
+	#Nodos{
+	position: absolute;
+	left: 325px;
+	top: 224px;
+	width: 733px;
+	height: 46px;
+	z-index: 1;
+	
+
+	}z
+
+
+	/*background-color: #006600;
+	}
+
+	
+	/*********************/
+/*  MENUS 			 */
+/*********************/
+
+ul#menu {
+	ba
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+/*  width: 500px;*/ /*For KHTML*/
+width:725px;
+  list-style: none;
+  height: 20px;
+  border:1px solid #eee;
+  padding-bottom:5px;
+}
+
+ul#menu li {
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+	float: left; /*For Gecko*/
+	display: inline;
+	list-style: none;
+	position: relative;
+	height: 20px;
+	visibility: visible;
+}
+ul#menu li{
+	padding-bottom:5px;
+}
+ul#menu li:hover{
+	background:#ddd;
+}
+
+ul#menu  ul {
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  width: 160px;
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  background: #eee;
+  border: none;
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  filter:alpha(opacity=80);
+}
+
+ul#menu ul:after /*From IE 7 lack of compliance*/{
+  clear: both;
+  display: block;
+  font: 1px/0px serif;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+}
+
+ul#menu ul li {
+  width: 160px;
+  float: left; /*For IE 7 lack of compliance*/
+  display: block !important;
+  display: inline; /*For IE*/
+}
+
+/* Root Menu */
+ul#menu a {
+  padding: 5px 15px 5px;
+  float: none !important; /*For Opera*/
+  float: left; /*For IE*/
+  display: block;
+  color: #6F0;
+  text-decoration: none;
+  font-weight: bold;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+/*  border-right:1px solid #818181;*/
+  text-decoration: none;
+  height: auto !important;
+  height: 1%; /*For IE*/
+}
+
+/* Root Menu Hover Persistence */
+ul#menu a:hover,
+ul#menu li:hover a,
+ul#menu li.iehover a {
+color: #003300;
+
+}
+
+/* 2nd Menu */
+ul#menu li:hover li a,
+ul#menu li.iehover li a {
+  float: none;
+  border:none;
+}
+
+/* 2nd Menu Hover Persistence */
+ul#menu li:hover li a:hover,
+ul#menu li:hover li:hover a,
+ul#menu li.iehover li a:hover,
+ul#menu li.iehover li.iehover a {
+ background:#ddd;
+  color: #003300;
+}
+
+/* 3rd Menu */
+ul#menu li:hover li:hover li a,
+ul#menu li.iehover li.iehover li a {
+  background: #EEE;
+  color: #666;
+}
+
+/* 3rd Menu Hover Persistence */
+
+ul#menu li:hover li:hover li a:hover,
+ul#menu li:hover li:hover li:hover a,
+ul#menu li.iehover li.iehover li a:hover,
+ul#menu li.iehover li.iehover li.iehover a {
+background:#ddd;
+  color: #FFF;
+}
+
+/* 4th Menu */
+ul#menu li:hover li:hover li:hover li a,
+ul#menu li.iehover li.iehover li.iehover li a {
+background:#ddd;
+  color: #666;
+}
+
+/* 4th Menu Hover */
+ul#menu li:hover li:hover li:hover li a:hover,
+ul#menu li.iehover li.iehover li.iehover li a:hover {
+  background: #CCC;
+  color: #FFF;
+}
+
+ul#menu ul ul,
+ul#menu ul ul ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 160px;
+}
+
+/* Do Not Move - Must Come Before display:block for Gecko */
+ul#menu li:hover ul ul,
+ul#menu li:hover ul ul ul,
+ul#menu li.iehover ul ul,
+ul#menu li.iehover ul ul ul {
+  display: none;
+}
+
+ul#menu li:hover ul,
+ul#menu ul li:hover ul,
+ul#menu ul ul li:hover ul,
+ul#menu li.iehover ul,
+ul#menu ul li.iehover ul,
+ul#menu ul ul li.iehover ul {
+  display: block;
+}
+ul#menu .selected{
+	color: #CCC;
+}
+.tex {
+	font-family: "Comic Sans MS", cursive;
+}
+.tex {
+	font-size: xx-large;
+	color: #000000;
+}

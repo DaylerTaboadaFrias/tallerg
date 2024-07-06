@@ -1,0 +1,69 @@
+body {
+	background-color: #FFF;
+	}
+	
+#Cont{
+	position: absolute;
+	left: 147px;
+	top: 213px;
+	width: 1065px;
+	height: 409px;
+	z-index: 1;
+	background-color: #CCCCCC;
+	color: #030;
+	font-size: 16;
+	visibility: inherit;
+	}
+	
+#Atras{
+	position: absolute;
+	left: 987px;
+	top: 12px;
+	width: 69px;
+	height: 65px;
+	z-index: 1;
+	visibility: visible;
+	}
+	
+	#Titulo{
+	position: absolute;
+	left: 148px;
+	top: 13px;
+	width: 1039px;
+	height: 158px;
+	z-index: 1;
+	background-color: #FFFFFF;
+	color: #FFF;
+	font-size: 16;
+	text-decoration: none;
+		}
+Titulo#a{
+	text-decoration:none;
+	color:#FFF;
+}
+	
+#Sintomas {
+	position: absolute;
+	left: 93px;
+	top: 73px;
+	width: 871px;
+	min-height: 400px;
+	height: 144px;
+	z-index: 3;
+	background-color: transparent;
+	visibility: inherit;
+	
+}
+
+#Enfermedad {
+	position: absolute;
+	left: 93px;
+	top: 73px;
+	width: 871px;
+	min-height: 400px;
+	height: 344px;
+	z-index: 3;
+	background-color: transparent;
+	visibility: visible;
+	
+}

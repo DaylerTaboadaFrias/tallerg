@@ -1,0 +1,125 @@
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body> -->
+
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark " style="background-color: #D0EEF0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/dr.let/Public/Imagen/logo_drlet.jpg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand mx-5" href="#">Dr.Let</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <?php
+            ?>
+            <?php
+                if (isset($_SESSION['tipo'])){
+               ?>  
+            <li class="nav-item dropdown mx-5">
+              <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Administracion
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <?php
+                if (isset($_SESSION['tipo'])){
+             if ($_SESSION['tipo']=="A"){
+            ?>
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/usuario.php">Usuario</a>
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/paciente.php">Paciente</a>
+             <?php 
+            
+            }} 
+            ?>   
+               
+            <a class="dropdown-item" href="/dr.let/CapaPresentacion/medicamento.php">Medicamento</a>
+              </div>
+            </li>
+
+  <?php 
+            
+            } 
+            ?>
+
+            <?php
+             if (isset($_SESSION['tipo'])){
+             if ($_SESSION['tipo']=="A"){
+            ?>
+            <li class="nav-item dropdown mx-5">
+              <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Seguimiento
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/visita.php">Visita</a>
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/agenda.php">Agenda</a>
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/receta.php">Receta</a> 
+              </div>
+            </li>
+           
+            <li class="nav-item dropdown mx-5">
+              <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tratamiento
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/categoria.php">Categoria</a>
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/trabajo.php">Trabajo</a>
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/evaluacion.php">Consulta</a>
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/tratamiento.php">Tratamiento</a>
+                <a class="dropdown-item" href="/dr.let/CapaPresentacion/historia.php">Consultar historia clinica</a>
+              </div>
+            </li>
+            <?php 
+            
+            }} 
+            ?>
+
+
+           
+            <li class="nav-item dropdown mx-5">
+
+                <a class="nav-link dropdown-toggle" style="color: #151515 !important; font-weight: bold;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Diagnostico virtual
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/Principal.php">Iniciar</a>
+                </div>
+            </li>
+           
+            <li class="nav-item dropdown mx-5">
+
+                <a class="nav-link dropdown-toggle " style="color: #151515 !important; font-weight: bold;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Cuenta
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/centraldent/login.php">Iniciar Sesion</a>
+                  <a class="dropdown-item" href="/centraldent/logout.php">Salir</a>
+                </div>
+            </li>
+            
+          </ul>
+         
+        </div>
+      </div>
+        
+</nav>
+
+<!--
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+</html>-->
