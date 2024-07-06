@@ -6,7 +6,7 @@
   <title>Dr.LET</title>
   <link rel="stylesheet" href="Public/css/bootstrap.min.css">
 
-
+ 
 </head>
 <?php
 include_once("plantilla.html");
