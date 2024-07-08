@@ -303,7 +303,7 @@ $("#tablamedicamentoreceta #"+id).remove();
                     $listanombre=  array();
                     $listatratamiento=  array();
                     $listaidtratamiento=  array();
-                    $resultado=$objetoCapaNegocioTratamiento->getTratamiento();
+                    $resultado=$objetoCapaNegocioTratamiento->getTratamiento($_SESSION['user']);
                     $n= count($resultado);
                     for ($i = 0 ; $i < $n ; $i++) {
                         $listanombre[$i]=$resultado[$i]['nombre'];
@@ -354,7 +354,7 @@ $("#tablamedicamentoreceta #"+id).remove();
                     $listanombre=  array();
                     $listatratamiento=  array();
                     $listaidtratamiento=  array();
-                    $resultado=$objetoCapaNegocioTratamiento->getTratamiento();
+                    $resultado=$objetoCapaNegocioTratamiento->getTratamiento($_SESSION['user']);
                     $n= count($resultado);
                     for ($i = 0 ; $i < $n ; $i++) {
                         $listanombre[$i]=$resultado[$i]['nombre'];
@@ -433,7 +433,7 @@ $("#tablamedicamentoreceta #"+id).remove();
                                           $listanombre=  array();
                                           $listatratamiento=  array();
                                           $listaidtratamiento=  array();
-                                          $resultado=$objetoCapaNegocioTratamiento->getTratamiento();
+                                          $resultado=$objetoCapaNegocioTratamiento->getTratamiento($_SESSION['user']);
                                           $n= count($resultado);
                                           for ($i = 0 ; $i < $n ; $i++) {
                                               $listanombre[$i]=$resultado[$i]['nombre'];
