@@ -26,7 +26,6 @@ try{
 }catch(PDOException $ex){
     echo  $ex->getMessage();
 }
-$objetoCapaNegocio->obtenerHistoriaClinica(3);
 ?>
 
 

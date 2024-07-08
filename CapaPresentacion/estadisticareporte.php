@@ -40,7 +40,7 @@ include_once("../plantilla.html");
             <label for="month" class="mr-2">Mes:</label>
             <input type="number" class="form-control" id="month" name="month" value="<?php echo date('m'); ?>" min="1" max="12" required>
         </div>
-        <button type="submit" class="btn btn-primary">Filtrar</button>
+        <button type="submit" class="btn btn-primary">Trabajos Más Requeridos</button>
     </form>
 
     <?php
@@ -99,7 +99,7 @@ include_once("../plantilla.html");
             <label for="year_ingresos" class="mr-2">Año:</label>
             <input type="number" class="form-control" id="year_ingresos" name="year_ingresos" value="<?php echo date('Y'); ?>" required>
         </div>
-        <button type="submit" class="btn btn-primary">Filtrar</button>
+        <button type="submit" class="btn btn-primary">Ingresos Mensuales</button>
     </form>
 
     <?php
