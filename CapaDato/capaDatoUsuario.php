@@ -16,7 +16,7 @@ include('Kairos.php');
 		
 		$this->objetoConexion->conectar();
 		$this->objetoConexion->ejecutar(
-			"INSERT INTO persona (nombre, apellido, cedula, correo, nit, sexo, telefono) values ('$nombre', '$apellido','$cedula', '$correo', '$nit','$sexo','C')");
+			"INSERT INTO persona (nombre, apellido, cedula, correo, nit, sexo, telefono) values ('$nombre', '$apellido','$cedula', '$correo', '$nit','$sexo','$telefono')");
 		$this->objetoConexion->ejecutar(
 				"INSERT INTO usuario (id, password, tipo) VALUES (LAST_INSERT_ID(), '$password_encriptado', '$tipo')");
 		$this->objetoConexion->desconectar();		
