@@ -1,7 +1,7 @@
 <?php 
 include_once("../../CapaDato/capaDatoMedicamentoReceta.php");
 $capaDatoReceta= new capaDatoMedicamentoReceta();
-include 'plantillaReceta.php';
+include 'https://tallerg-production.up.railway.app/capaNegocio/receta/plantillaReceta.php';
 $id=$_POST['id'];
 
 $pdf=new PDF('L');
