@@ -10,7 +10,7 @@ include_once("conexion.php");
 
 		public function insertar($nombre, $marca,$medida,$tipo,$nombreFoto,$rutaFoto){
 
-			$destino="../Public/Imagen/".$nombreFoto;
+			$destino="https://tallerg-production.up.railway.app/Public/Imagen/".$nombreFoto;
 			copy($rutaFoto, $destino);
 			$imagen=$destino;
 			$this->objetoConexion->conectar();
@@ -30,7 +30,7 @@ include_once("conexion.php");
 		public function actualizar($id,$nombre, $marca,$medida,$tipo,$nombreFoto,$rutaFoto){
 			$this->objetoConexion->conectar();
 			if (!empty($nombreFoto) && !empty($rutaFoto)) {
-			$destino="../Public/Imagen/".$nombreFoto;
+			$destino="https://tallerg-production.up.railway.app/Public/Imagen/".$nombreFoto;
 			copy($rutaFoto, $destino);
 			$imagen=$destino;
 			$this->objetoConexion->ejecutar(
