@@ -133,15 +133,15 @@ include_once("../plantilla.html");
                                                                 } ?> </h4>
                                 </div>
                                 <div class="alert alert-primary" role="alert" style="display: none" id="seccion">
-                                    <h3 class="alert-primary" id="tratamiento">Tratamiento: <h3 style="color: red" id="nombreTratamiento"></h3></h3>
-                                    <h5 id="costo"></h5>
+                                    <h3 class="alert-primary" id="tratamiento">Tratamiento recomendado : <h3 style="color: red" id="nombreTratamiento"></h3></h3>
+                                    <h5 hidden id="costo"></h5>
                                     <form action="RegistrarTratamiento.php" method="POST">
                                         <input type="hidden" id="idTrabajo" name="idTrabajo" >
-                                        <input type="hidden" id="precio" name="precio">
-                                        <button class="btn btn-info" type="submit">Deseo registrar un tratamiento</button>
+                                        <input  type="hidden" id="precio" name="precio">
+                                        <button hidden class="btn btn-info" type="submit">Deseo registrar un tratamiento</button>
                                     </form>
                                     
-                                    <a target="_blank"  href="/Ubicacion.php" class="btn btn-info">¿Donde nos encontramos?</a>
+                                    <a hidden target="_blank"  href="/Ubicacion.php" class="btn btn-info">¿Donde nos encontramos?</a>
                                     </div>
                                     <button type="button" id="si" name="si" class="btn btn-success">SI</button>
                                     <button type="button" id="no" name="no" class="btn btn-danger">NO</button>			
@@ -268,6 +268,7 @@ $(document).ready(function() {
 		                 		document.getElementById("seccion").style.display="block";
 		                 		document.getElementById("idTrabajo").value = data.trabajoEnfermedad[(data.indiceEnfermedad)-1];
 		                 		document.getElementById("precio").value = data.precio[(data.trabajoEnfermedad[(data.indiceEnfermedad)-1])-1];
+                                console.log(data);
 		                  	}else if (data.diagnostico == 2) {
 		                  		document.getElementById("pregunta").style.display="none";
 		                  		document.getElementById("si").style.display="none";
@@ -282,7 +283,9 @@ $(document).ready(function() {
 		                 		document.getElementById("seccion").style.display="block";
 		                 		document.getElementById("idTrabajo").value = data.trabajoEnfermedad[(data.indiceEnfermedad)-1];
 		                 		document.getElementById("precio").value = data.precio[(data.trabajoEnfermedad[(data.indiceEnfermedad)-1])-1];
-		                  	}else{
+                                 console.log(data);
+                            }else{
+                                console.log(data);
 		                  		$("#pregunta").text(data.preguntaEnfermedadSintoma[data.indicePregunta]);
 		                  	}
 		     				
@@ -313,7 +316,7 @@ $(document).ready(function() {
 		                  		document.getElementById("si").style.display="none";
 		                  		document.getElementById("no").style.display="none";
 		                  		document.getElementById("inicio").style.display="none";
-		                  		
+		                  		console.log(data);
 		                  		$("#usted").text("Ya hemos diagnosticado sus sintomas usted tiene: ");
 		                  		$("#nombreEnfermedad").text(data.nombreEnfermedad[(data.indiceEnfermedad)-1]);
 		                  		$("#diagnostico").text(data.descripcionEnfermedad[(data.indiceEnfermedad)-1]);
@@ -328,7 +331,7 @@ $(document).ready(function() {
 		                  		document.getElementById("si").style.display="none";
 		                  		document.getElementById("no").style.display="none";
 		                  		document.getElementById("inicio").style.display="none";
-		                  		
+		                  		console.log(data);
 		                  		$("#idenfermedad").text("0");
 		                  		$("#usted").text("No es posible encontrar una enfermedad sin sintomas ");
 		                  		$("#nombreEnfermedad").text(data.nombreEnfermedad[(data.indiceEnfermedad)-1]);
@@ -338,6 +341,7 @@ $(document).ready(function() {
 		                 		document.getElementById("idTrabajo").value = data.trabajoEnfermedad[(data.indiceEnfermedad)-1];
 		                 		document.getElementById("precio").value = data.precio[(data.trabajoEnfermedad[(data.indiceEnfermedad)-1])-1];
 		                  	}else{
+                                console.log(data);
 		                  		$("#pregunta").text(data.preguntaEnfermedadSintoma[data.indicePregunta]);
 		                  	}
 		     				
