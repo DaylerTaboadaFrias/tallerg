@@ -7,9 +7,9 @@
 
 
 		public function __construct(){
-			$this->cadenaConexion='mysql:host=127.0.0.1;port=3306;dbname=centraldent';
-			$this->user='root';
-			$this->password='';
+			$this->cadenaConexion='mysql:host=mysql-177747-0.cloudclusters.net;port=10103;dbname=drlet';
+			$this->user='admin';
+			$this->password='Pxh6V2V5';
 		}
 		// public function __construct(){
 		// 	$this->cadenaConexion='mysql:host=mysql-158297-0.cloudclusters.net;port=16807;dbname=clinica';
@@ -18,7 +18,7 @@
 		// }
 		public function conectar(){
 			try{
-				$this->objectoConexion=new PDO('mysql:host=127.0.0.1;port=3306;dbname=centraldent','root','');
+				$this->objectoConexion=new PDO('mysql:host=mysql-177747-0.cloudclusters.net;port=10103;dbname=drlet','admin','Pxh6V2V5');
 			}catch(PDOException $ex){
 				echo "Problema al conectar con la base de datos";
 			}
