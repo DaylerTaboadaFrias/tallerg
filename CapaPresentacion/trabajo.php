@@ -83,8 +83,14 @@ include_once("../plantilla.html");
 
         <div class="form-row justify-content-between">
             <button type="submit" name="insertar" class="btn btn-secondary" style="background-color: #527a7a">Insertar</button>
-            <button type="submit" name="eliminar" class="btn btn-danger mx-3" style="background-color: #ff6666">Eliminar</button>
-            <button type="submit" name="actualizar" class="btn btn-info mx-3">Actualizar</button>
+            <?php
+				if ($_SESSION['tipo']=="D"){
+			?>
+				<button type="submit" name="eliminar" class="btn btn-danger mx-3" style="background-color: #ff6666">Eliminar</button>
+                <button type="submit" name="actualizar" class="btn btn-info mx-3">Actualizar</button>
+			<?php 
+				} 
+			?>
             <input class="form-control" id="busqueda" type="text" placeholder="Buscar por nombre" aria-label="Search">
             <button type="button" id="limpiar" class="btn btn-info" >Limpiar</button>
         </div>
